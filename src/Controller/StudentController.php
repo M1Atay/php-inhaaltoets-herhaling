@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class StudentController extends AbstractController
 {
-    #[\Symfony\Component\Routing\Annotation\Route('/add/{id}', name: 'create_student')]
+    #[Route('/add-student/{id}', name: 'add_student')]
     public function addStudent(Request $request, EntityManagerInterface $entityManager, int $id): Response
     {
 //        dd('test');
