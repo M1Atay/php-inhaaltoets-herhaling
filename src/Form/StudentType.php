@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Schoolgroup;
+use App\Entity\SchoolGroup;
 use App\Entity\Student;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -19,7 +19,7 @@ class StudentType extends AbstractType
             ->add('Age')
             ->add('Email')
             ->add('School_group', EntityType::class, [
-                'class' => Schoolgroup::class,
+                'class' => SchoolGroup::class,
                 'choice_label' => 'id',
             ])
         ;
