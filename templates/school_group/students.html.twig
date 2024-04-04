@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="masthead-heading text-uppercase mb-0">
+        Klassen overzicht
+{#        <a href="{{ path('addStudent') }}"><button type="button" class="btn btn-success">nieuwe student</button></a>#}
+    </h1>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>leeftijd</th>
+            <th>Emailadres</th>
+            <th>acties</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in school_groups.students %}
+            <tr>
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.email }}</td>
+                <td><a href="#"><button type="button" class="btn btn-success">toon student</button></a>
+                    <a href=" {{ path('delete',{id:student.id}) }} "><button type="button" class="btn btn-danger">verwijder</button></a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
